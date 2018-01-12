@@ -11,4 +11,10 @@
     <string name="next">next round</string>
     <string name="reset">reset</string>
     <string name="result">result</string>
+    <dimen name="score_font_size">30sp</dimen>
+    <dimen name="attack_font_size">25sp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="frame_margin">5dp</dimen>
+
 </resources>

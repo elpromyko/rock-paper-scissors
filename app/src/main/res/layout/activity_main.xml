@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/frame_margin"
+    android:layout_marginLeft="@dimen/frame_margin"
+    android:layout_marginRight="@dimen/frame_margin"
+    android:layout_marginTop="@dimen/frame_margin"
+    android:fillViewport="true">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/bg_photo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="5dp"
         android:scaleType="centerCrop"
         android:src="@drawable/bg"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -28,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="8dp"
+                android:padding="@dimen/padding"
                 android:text="@string/player_1_name" />
 
             <TextView
@@ -36,8 +43,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="8dp"
-                android:textSize="30sp"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/score_font_size"
                 android:textColor="@color/black"
                 android:text="@string/player_1_score" />
 
@@ -45,7 +52,7 @@
                 android:id="@+id/button_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin"
                 android:gravity="center"
                 android:onClick="takeRockPlayer1"
                 android:text="@string/rock" />
@@ -54,7 +61,7 @@
                 android:id="@+id/button_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin"
                 android:gravity="center"
                 android:onClick="takePaperPlayer1"
                 android:text="@string/paper" />
@@ -63,7 +70,7 @@
                 android:id="@+id/button_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin"
                 android:gravity="center"
                 android:onClick="takeScissorsPlayer1"
                 android:text="@string/scissors" />
@@ -73,8 +80,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="8dp"
-                android:textSize="25sp"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/attack_font_size"
                 android:textColor="@color/colorDarkBlue"
                 android:text="@string/fight" />
 
@@ -90,7 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="8dp"
+                android:padding="@dimen/padding"
                 android:text="@string/player_2_name" />
 
             <TextView
@@ -98,8 +105,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="8dp"
-                android:textSize="30sp"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/score_font_size"
                 android:textColor="@color/black"
                 android:text="@string/player_2_score" />
 
@@ -107,7 +114,7 @@
                 android:id="@+id/button_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin"
                 android:gravity="center"
                 android:onClick="takeRockPlayer2"
                 android:text="@string/rock" />
@@ -116,7 +123,7 @@
                 android:id="@+id/button_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin"
                 android:gravity="center"
                 android:onClick="takePaperPlayer2"
                 android:text="@string/paper" />
@@ -125,7 +132,7 @@
                 android:id="@+id/button_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin"
                 android:gravity="center"
                 android:onClick="takeScissorsPlayer2"
                 android:text="@string/scissors" />
@@ -135,8 +142,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="8dp"
-                android:textSize="25sp"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/attack_font_size"
                 android:textColor="@color/colorDarkBlue"
                 android:text="@string/fight" />
 
@@ -148,9 +155,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
         android:text="@string/next"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/margin"
+        android:layout_centerHorizontal="true"
         android:onClick="activateAllButtons"/>
 
     <Button
@@ -159,7 +166,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="@string/result"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/margin"
         android:onClick="addScore"/>
 
     <Button
@@ -167,8 +174,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/margin"
         android:text="@string/reset"
         android:onClick="reset"/>
 
 </RelativeLayout>
+</ScrollView>

@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         btn6 = findViewById(R.id.button_6);
         player1Attack = getString(R.string.fight);
         player2Attack = getString(R.string.fight);
+        scorePlayer1 = Integer.parseInt(getString(R.string.player_1_score));
+        scorePlayer2 = Integer.parseInt(getString(R.string.player_2_score));
     }
 
     public void displayPlayer1Attack(String WeaponPlayer1) {
