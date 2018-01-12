@@ -3,6 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/bg_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="Player 1" />
+                android:text="@string/player_1_name" />
 
             <TextView
                 android:id="@+id/player1_score"
@@ -27,7 +37,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="0" />
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:text="@string/player_1_score" />
 
             <Button
                 android:id="@+id/button_1"
@@ -36,7 +48,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="takeRockPlayer1"
-                android:text="ROCK" />
+                android:text="@string/rock" />
 
             <Button
                 android:id="@+id/button_2"
@@ -45,7 +57,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="takePaperPlayer1"
-                android:text="PAPER" />
+                android:text="@string/paper" />
 
             <Button
                 android:id="@+id/button_3"
@@ -54,7 +66,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="takeScissorsPlayer1"
-                android:text="SCISSORS" />
+                android:text="@string/scissors" />
 
             <TextView
                 android:id="@+id/player1_weapon"
@@ -62,7 +74,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="Fight!" />
+                android:textSize="25sp"
+                android:textColor="@color/colorDarkBlue"
+                android:text="@string/fight" />
 
         </LinearLayout>
 
@@ -77,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="Player 2" />
+                android:text="@string/player_2_name" />
 
             <TextView
                 android:id="@+id/player2_score"
@@ -85,7 +99,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="0" />
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:text="@string/player_2_score" />
 
             <Button
                 android:id="@+id/button_4"
@@ -94,7 +110,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="takeRockPlayer2"
-                android:text="ROCK" />
+                android:text="@string/rock" />
 
             <Button
                 android:id="@+id/button_5"
@@ -103,7 +119,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="takePaperPlayer2"
-                android:text="PAPER" />
+                android:text="@string/paper" />
 
             <Button
                 android:id="@+id/button_6"
@@ -112,7 +128,7 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:onClick="takeScissorsPlayer2"
-                android:text="SCISSORS" />
+                android:text="@string/scissors" />
 
             <TextView
                 android:id="@+id/player2_weapon"
@@ -120,7 +136,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="Fight!" />
+                android:textSize="25sp"
+                android:textColor="@color/colorDarkBlue"
+                android:text="@string/fight" />
 
         </LinearLayout>
 
@@ -131,7 +149,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:text="Next round"
+        android:text="@string/next"
+        android:layout_margin="8dp"
         android:onClick="activateAllButtons"/>
 
     <Button
@@ -139,15 +158,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Result"
+        android:text="@string/result"
+        android:layout_margin="8dp"
         android:onClick="addScore"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="reset"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:text="@string/reset"
         android:onClick="reset"/>
 
 </RelativeLayout>

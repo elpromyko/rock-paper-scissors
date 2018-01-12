@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    String player1Weapon = "Fight!";
-    String player2Weapon = "Fight!";
+    String player1Weapon;
+    String player2Weapon;
     Button btn1;
     Button btn2;
     Button btn3;
@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         btn4 = (Button) findViewById(R.id.button_4);
         btn5 = (Button) findViewById(R.id.button_5);
         btn6 = (Button) findViewById(R.id.button_6);
+        player1Weapon = getString(R.string.fight);
+        player2Weapon = getString(R.string.fight);
     }
 
     public void displayPlayer1Weapon(String WeaponPlayer1) {

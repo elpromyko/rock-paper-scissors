@@ -3,4 +3,12 @@
     <string name="rock">Rock</string>
     <string name="paper">Paper</string>
     <string name="scissors">Scissors</string>
+    <string name="fight">Fight!</string>
+    <string name="player_1_name">Player 1</string>
+    <string name="player_2_name">Player 2</string>
+    <string name="player_1_score">0</string>
+    <string name="player_2_score">0</string>
+    <string name="next">next round</string>
+    <string name="reset">reset</string>
+    <string name="result">result</string>
 </resources>
