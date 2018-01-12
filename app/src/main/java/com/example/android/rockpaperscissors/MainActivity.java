@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    String player1Weapon;
-    String player2Weapon;
+    String player1Attack;
+    String player2Attack;
     Button btn1;
     Button btn2;
     Button btn3;
@@ -26,23 +26,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn1 = (Button) findViewById(R.id.button_1);
-        btn2 = (Button) findViewById(R.id.button_2);
-        btn3 = (Button) findViewById(R.id.button_3);
-        btn4 = (Button) findViewById(R.id.button_4);
-        btn5 = (Button) findViewById(R.id.button_5);
-        btn6 = (Button) findViewById(R.id.button_6);
-        player1Weapon = getString(R.string.fight);
-        player2Weapon = getString(R.string.fight);
+        btn1 = findViewById(R.id.button_1);
+        btn2 = findViewById(R.id.button_2);
+        btn3 = findViewById(R.id.button_3);
+        btn4 = findViewById(R.id.button_4);
+        btn5 = findViewById(R.id.button_5);
+        btn6 = findViewById(R.id.button_6);
+        player1Attack = getString(R.string.fight);
+        player2Attack = getString(R.string.fight);
     }
 
-    public void displayPlayer1Weapon(String WeaponPlayer1) {
-        TextView ScoreTeamAView = (TextView) findViewById(R.id.player1_weapon);
+    public void displayPlayer1Attack(String WeaponPlayer1) {
+        TextView ScoreTeamAView = findViewById(R.id.player1_weapon);
         ScoreTeamAView.setText(String.valueOf(WeaponPlayer1));
     }
 
-    public void displayPlayer2Weapon(String WeaponPlayer2) {
-        TextView ScoreTeamAView = (TextView) findViewById(R.id.player2_weapon);
+    public void displayPlayer2Attack(String WeaponPlayer2) {
+        TextView ScoreTeamAView = findViewById(R.id.player2_weapon);
         ScoreTeamAView.setText(String.valueOf(WeaponPlayer2));
     }
 
@@ -66,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
         btn5.setEnabled(true);
         btn6.setEnabled(true);
         resetWeapons();
-        displayPlayer1Weapon(player1Weapon);
-        displayPlayer2Weapon(player2Weapon);
+        displayPlayer1Attack(player1Attack);
+        displayPlayer2Attack(player2Attack);
     }
 
     public void resetWeapons() {
-        player1Weapon = "Fight!";
-        player2Weapon = "Fight!";
+        player1Attack = "Fight!";
+        player2Attack = "Fight!";
     }
 
     public void resetScores() {
@@ -88,51 +88,51 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void takeRockPlayer1 (View view) {
-        player1Weapon = getString(R.string.rock);
+        player1Attack = getString(R.string.rock);
         deactivateAllButtonsForPlayer1();
     }
 
     public void takePaperPlayer1 (View view) {
-        player1Weapon = getString(R.string.paper);
+        player1Attack = getString(R.string.paper);
         deactivateAllButtonsForPlayer1();
     }
 
     public void takeScissorsPlayer1 (View view) {
-        player1Weapon = getString(R.string.scissors);
+        player1Attack = getString(R.string.scissors);
         deactivateAllButtonsForPlayer1();
     }
 
     public void takeRockPlayer2 (View view) {
-        player2Weapon = getString(R.string.rock);
+        player2Attack = getString(R.string.rock);
         deactivateAllButtonsForPlayer2();
     }
 
     public void takePaperPlayer2 (View view) {
-        player2Weapon = getString(R.string.paper);
+        player2Attack = getString(R.string.paper);
         deactivateAllButtonsForPlayer2();
     }
 
     public void takeScissorsPlayer2 (View view) {
-        player2Weapon = getString(R.string.scissors);
+        player2Attack = getString(R.string.scissors);
         deactivateAllButtonsForPlayer2();
     }
 
     public void displayPlayer1Score(int player1Score) {
-        TextView ScoreTeamAView = (TextView) findViewById(R.id.player1_score);
+        TextView ScoreTeamAView = findViewById(R.id.player1_score);
         ScoreTeamAView.setText(String.valueOf(player1Score));
     }
 
     public void displayPlayer2Score(int player2Score) {
-        TextView ScoreTeamAView = (TextView) findViewById(R.id.player2_score);
+        TextView ScoreTeamAView = findViewById(R.id.player2_score);
         ScoreTeamAView.setText(String.valueOf(player2Score));
     }
 
     public void addScore(View view) {
-        if ((! player1Weapon.equals(player2Weapon))
-                && ((! player1Weapon.equals("Fight!")) && (! player2Weapon.equals("Fight!")) )) {
-            if ((player1Weapon.equals(ROCK) && player2Weapon.equals(SCISSORS))
-                    || (player1Weapon.equals(PAPER) && player2Weapon.equals(ROCK))
-                    || (player1Weapon.equals(SCISSORS) && player2Weapon.equals(PAPER))) {
+        if ((! player1Attack.equals(player2Attack))
+                && ((! player1Attack.equals("Fight!")) && (! player2Attack.equals("Fight!")) )) {
+            if ((player1Attack.equals(ROCK) && player2Attack.equals(SCISSORS))
+                    || (player1Attack.equals(PAPER) && player2Attack.equals(ROCK))
+                    || (player1Attack.equals(SCISSORS) && player2Attack.equals(PAPER))) {
                 scorePlayer1 = scorePlayer1 + 1;
                 displayPlayer1Score(scorePlayer1);
             } else {
@@ -140,8 +140,8 @@ public class MainActivity extends AppCompatActivity {
                 displayPlayer2Score(scorePlayer2);
             }
         }
-        displayPlayer1Weapon(player1Weapon);
-        displayPlayer2Weapon(player2Weapon);
+        displayPlayer1Attack(player1Attack);
+        displayPlayer2Attack(player2Attack);
         resetWeapons();
 
     }
