@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        // Save the user's current game state
+        // Save the user's current score state for both players
         savedInstanceState.putInt(PLAYER1_SCORE, scorePlayer1);
         savedInstanceState.putInt(PLAYER2_SCORE, scorePlayer2);
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
 
 
-        // Restore state members from saved instance
+        // Restore score states from saved instance and display them
         scorePlayer1 = savedInstanceState.getInt(PLAYER1_SCORE);
         scorePlayer2 = savedInstanceState.getInt(PLAYER2_SCORE);
         displayPlayer1Score(scorePlayer1);
