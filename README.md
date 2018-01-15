@@ -1,8 +1,7 @@
 # rock-paper-scissors
 Rock Paper Scissors game app - 2nd project for Google / Udacity Scholarship Program - Android Basics Course
 
-fig.1 ![rock_paper_scissors_screen](https://github.com/elpromyko/img/blob/master/rps2.png) fig.2 ![rock_paper_scissors_screen](https://github.com/elpromyko/img/blob/master/fig2re.png)
-fig.3 ![rock_paper_scissors_screen](https://github.com/elpromyko/img/blob/master/fig3re.png)
+1 ![rock_paper_scissors_screen](https://github.com/elpromyko/img/blob/master/rps2.png) 2 ![rock_paper_scissors_screen](https://github.com/elpromyko/img/blob/master/fig2re.png) 3 ![rock_paper_scissors_screen](https://github.com/elpromyko/img/blob/master/fig3re.png)
 
 Rules:
 
