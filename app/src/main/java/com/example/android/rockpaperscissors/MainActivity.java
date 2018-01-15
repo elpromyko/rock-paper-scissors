@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     static final String ROCK = "Rock";
     static final String PAPER = "Paper";
     static final String SCISSORS = "Scissors";
+    static final String PLAYER1_SCORE = "player1Score";
+    static final String PLAYER2_SCORE = "player2Score";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,28 @@ public class MainActivity extends AppCompatActivity {
         player2Attack = getString(R.string.fight);
         scorePlayer1 = Integer.parseInt(getString(R.string.player_1_score));
         scorePlayer2 = Integer.parseInt(getString(R.string.player_2_score));
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save the user's current game state
+        savedInstanceState.putInt(PLAYER1_SCORE, scorePlayer1);
+        savedInstanceState.putInt(PLAYER2_SCORE, scorePlayer2);
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can restore the view hierarchy
+        super.onRestoreInstanceState(savedInstanceState);
+
+
+        // Restore state members from saved instance
+        scorePlayer1 = savedInstanceState.getInt(PLAYER1_SCORE);
+        scorePlayer2 = savedInstanceState.getInt(PLAYER2_SCORE);
+        displayPlayer1Score(scorePlayer1);
+        displayPlayer2Score(scorePlayer2);
     }
 
     public void displayPlayer1Attack(String WeaponPlayer1) {
