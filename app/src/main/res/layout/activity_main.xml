@@ -3,180 +3,183 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_marginBottom="@dimen/frame_margin"
     android:layout_marginLeft="@dimen/frame_margin"
     android:layout_marginRight="@dimen/frame_margin"
     android:layout_marginTop="@dimen/frame_margin"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:orientation="vertical">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/bg_photo"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg"/>
+        android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:baselineAligned="false">
+        <ImageView
+            android:id="@+id/bg_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/bg_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg" />
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false">
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="@dimen/width_zero"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="@dimen/padding"
-                android:text="@string/player_1_name" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/player1_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/score_font_size"
-                android:textColor="@color/black"
-                android:text="@string/player_1_score" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/padding"
+                    android:text="@string/player_1_name" />
 
-            <Button
-                android:id="@+id/button_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
-                android:gravity="center"
-                android:onClick="setPlayer1Attack"
-                android:text="@string/rock" />
+                <TextView
+                    android:id="@+id/player1_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/padding"
+                    android:text="@string/player_1_score"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/score_font_size" />
 
-            <Button
-                android:id="@+id/button_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
-                android:gravity="center"
-                android:onClick="setPlayer1Attack"
-                android:text="@string/paper" />
+                <Button
+                    android:id="@+id/button_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin"
+                    android:gravity="center"
+                    android:onClick="setPlayer1Attack"
+                    android:text="@string/rock" />
 
-            <Button
-                android:id="@+id/button_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
-                android:gravity="center"
-                android:onClick="setPlayer1Attack"
-                android:text="@string/scissors" />
+                <Button
+                    android:id="@+id/button_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin"
+                    android:gravity="center"
+                    android:onClick="setPlayer1Attack"
+                    android:text="@string/paper" />
 
-            <TextView
-                android:id="@+id/player1_weapon"
-                android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/button_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin"
+                    android:gravity="center"
+                    android:onClick="setPlayer1Attack"
+                    android:text="@string/scissors" />
+
+                <TextView
+                    android:id="@+id/player1_weapon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/padding"
+                    android:text="@string/fight"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="@dimen/attack_font_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/width_zero"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/attack_font_size"
-                android:textColor="@color/colorDarkBlue"
-                android:text="@string/fight" />
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/padding"
+                    android:text="@string/player_2_name" />
+
+                <TextView
+                    android:id="@+id/player2_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/padding"
+                    android:text="@string/player_2_score"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/score_font_size" />
+
+                <Button
+                    android:id="@+id/button_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin"
+                    android:gravity="center"
+                    android:onClick="setPlayer2Attack"
+                    android:text="@string/rock" />
+
+                <Button
+                    android:id="@+id/button_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin"
+                    android:gravity="center"
+                    android:onClick="setPlayer2Attack"
+                    android:text="@string/paper" />
+
+                <Button
+                    android:id="@+id/button_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin"
+                    android:gravity="center"
+                    android:onClick="setPlayer2Attack"
+                    android:text="@string/scissors" />
+
+                <TextView
+                    android:id="@+id/player2_weapon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/padding"
+                    android:text="@string/fight"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="@dimen/attack_font_size" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <Button
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/margin"
+            android:onClick="activateAllButtons"
+            android:text="@string/next" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="@dimen/padding"
-                android:text="@string/player_2_name" />
+        <Button
+            android:id="@+id/result_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/margin"
+            android:onClick="addScore"
+            android:text="@string/result" />
 
-            <TextView
-                android:id="@+id/player2_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/score_font_size"
-                android:textColor="@color/black"
-                android:text="@string/player_2_score" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/margin"
+            android:onClick="reset"
+            android:text="@string/reset"
+            tools:ignore="RelativeOverlap" />
 
-            <Button
-                android:id="@+id/button_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
-                android:gravity="center"
-                android:onClick="setPlayer2Attack"
-                android:text="@string/rock" />
-
-            <Button
-                android:id="@+id/button_5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
-                android:gravity="center"
-                android:onClick="setPlayer2Attack"
-                android:text="@string/paper" />
-
-            <Button
-                android:id="@+id/button_6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
-                android:gravity="center"
-                android:onClick="setPlayer2Attack"
-                android:text="@string/scissors" />
-
-            <TextView
-                android:id="@+id/player2_weapon"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/attack_font_size"
-                android:textColor="@color/colorDarkBlue"
-                android:text="@string/fight" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="@string/next"
-        android:layout_margin="@dimen/margin"
-        android:layout_centerHorizontal="true"
-        android:onClick="activateAllButtons"/>
-
-    <Button
-        android:id="@+id/result_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="@string/result"
-        android:layout_margin="@dimen/margin"
-        android:onClick="addScore"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="@dimen/margin"
-        android:text="@string/reset"
-        android:onClick="reset"/>
-
-</RelativeLayout>
+    </RelativeLayout>
 </ScrollView>
