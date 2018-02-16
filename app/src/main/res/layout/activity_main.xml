@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin"
                 android:gravity="center"
-                android:onClick="takeRockPlayer1"
+                android:onClick="setPlayer1Attack"
                 android:text="@string/rock" />
 
             <Button
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin"
                 android:gravity="center"
-                android:onClick="takePaperPlayer1"
+                android:onClick="setPlayer1Attack"
                 android:text="@string/paper" />
 
             <Button
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin"
                 android:gravity="center"
-                android:onClick="takeScissorsPlayer1"
+                android:onClick="setPlayer1Attack"
                 android:text="@string/scissors" />
 
             <TextView
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin"
                 android:gravity="center"
-                android:onClick="takeRockPlayer2"
+                android:onClick="setPlayer2Attack"
                 android:text="@string/rock" />
 
             <Button
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin"
                 android:gravity="center"
-                android:onClick="takePaperPlayer2"
+                android:onClick="setPlayer2Attack"
                 android:text="@string/paper" />
 
             <Button
@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin"
                 android:gravity="center"
-                android:onClick="takeScissorsPlayer2"
+                android:onClick="setPlayer2Attack"
                 android:text="@string/scissors" />
 
             <TextView

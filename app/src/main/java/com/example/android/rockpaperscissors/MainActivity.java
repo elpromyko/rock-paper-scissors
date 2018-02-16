@@ -48,18 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        // Save the user's current score state for both players
         savedInstanceState.putInt(PLAYER1_SCORE, scorePlayer1);
         savedInstanceState.putInt(PLAYER2_SCORE, scorePlayer2);
-
-        // Always call the superclass so it can save the view hierarchy state
         super.onSaveInstanceState(savedInstanceState);
     }
 
     public void onRestoreInstanceState(Bundle savedInstanceState) {
-        // Always call the superclass so it can restore the view hierarchy
         super.onRestoreInstanceState(savedInstanceState);
-
 
         // Restore score states from saved instance and display them
         scorePlayer1 = savedInstanceState.getInt(PLAYER1_SCORE);
@@ -119,33 +114,15 @@ public class MainActivity extends AppCompatActivity {
         displayPlayer2Score(scorePlayer2);
     }
 
-    public void takeRockPlayer1 (View view) {
-        player1Attack = getString(R.string.rock);
+    public void setPlayer1Attack (View view) {
+        Button btn = (Button) view;
+        player1Attack = btn.getText().toString();
         deactivateAllButtonsForPlayer1();
     }
 
-    public void takePaperPlayer1 (View view) {
-        player1Attack = getString(R.string.paper);
-        deactivateAllButtonsForPlayer1();
-    }
-
-    public void takeScissorsPlayer1 (View view) {
-        player1Attack = getString(R.string.scissors);
-        deactivateAllButtonsForPlayer1();
-    }
-
-    public void takeRockPlayer2 (View view) {
-        player2Attack = getString(R.string.rock);
-        deactivateAllButtonsForPlayer2();
-    }
-
-    public void takePaperPlayer2 (View view) {
-        player2Attack = getString(R.string.paper);
-        deactivateAllButtonsForPlayer2();
-    }
-
-    public void takeScissorsPlayer2 (View view) {
-        player2Attack = getString(R.string.scissors);
+    public void setPlayer2Attack (View view) {
+        Button btn = (Button) view;
+        player2Attack = btn.getText().toString();
         deactivateAllButtonsForPlayer2();
     }
 
@@ -179,6 +156,5 @@ public class MainActivity extends AppCompatActivity {
         displayPlayer1Attack(player1Attack);
         displayPlayer2Attack(player2Attack);
         resetWeapons();
-
     }
 }
