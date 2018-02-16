@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Hashtable;
+
 public class MainActivity extends AppCompatActivity {
 
     String player1Attack;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     static final String SCISSORS = "Scissors";
     static final String PLAYER1_SCORE = "player1Score";
     static final String PLAYER2_SCORE = "player2Score";
+    Hashtable<String, Integer> attackValues = new Hashtable<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         player2Attack = getString(R.string.fight);
         scorePlayer1 = Integer.parseInt(getString(R.string.player_1_score));
         scorePlayer2 = Integer.parseInt(getString(R.string.player_2_score));
+        attackValues.put("Scissors", 3);
+        attackValues.put("Rock", 2);
+        attackValues.put("Paper", 1);
     }
 
     @Override
@@ -159,10 +165,14 @@ public class MainActivity extends AppCompatActivity {
             if ((player1Attack.equals(ROCK) && player2Attack.equals(SCISSORS))
                     || (player1Attack.equals(PAPER) && player2Attack.equals(ROCK))
                     || (player1Attack.equals(SCISSORS) && player2Attack.equals(PAPER))) {
-                scorePlayer1 = scorePlayer1 + 1;
+                scorePlayer1 += attackValues.get(player1Attack);
+                scorePlayer2 -= attackValues.get(player2Attack);
                 displayPlayer1Score(scorePlayer1);
+                displayPlayer2Score(scorePlayer2);
             } else {
-                scorePlayer2 = scorePlayer2 + 1;
+                scorePlayer1 -= attackValues.get(player1Attack);
+                scorePlayer2 += attackValues.get(player2Attack);
+                displayPlayer1Score(scorePlayer1);
                 displayPlayer2Score(scorePlayer2);
             }
         }
