@@ -20,10 +20,20 @@ public class MainActivity extends AppCompatActivity {
     static final String RESULT_BTN_STATE = "resultBtnState";
     static final String PLAYER1_BTNS_STATE = "player1BtnsState";
     static final String PLAYER2_BTNS_STATE = "player2BtnsState";
-    String player1Attack, player2Attack;
-    Button btn1, btn2, btn3, btn4, btn5, btn6, resultBtn;
-    int scorePlayer1, scorePlayer2;
-    Hashtable<String, Integer> attackValues = new Hashtable<>();
+    private String player1Attack;
+    private String player2Attack;
+    private Button btn1;
+    private Button btn2;
+    private Button btn3;
+    private Button btn4;
+    private Button btn5;
+    private Button btn6;
+    private Button resultBtn;
+    private int scorePlayer1;
+    private int scorePlayer2;
+    private Hashtable<String, Integer> attackValues = new Hashtable<>();
+    private TextView ScorePlayer1View;
+    private TextView ScorePlayer2View;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         attackValues.put(SCISSORS, 3);
         attackValues.put(ROCK, 2);
         attackValues.put(PAPER, 1);
+        ScorePlayer1View = findViewById(R.id.player1_score);
+        ScorePlayer2View = findViewById(R.id.player2_score);
     }
 
     @Override
@@ -128,8 +140,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayPlayersScores(int player1Score, int player2Score) {
-        TextView ScorePlayer1View = findViewById(R.id.player1_score);
-        TextView ScorePlayer2View = findViewById(R.id.player2_score);
         ScorePlayer1View.setText(String.valueOf(player1Score));
         ScorePlayer2View.setText(String.valueOf(player2Score));
     }
